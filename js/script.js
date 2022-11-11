@@ -25,6 +25,10 @@
 
         document.querySelector(".js-tasksList").innerHTML = listItem;
 
+        bindEvents();
+    };
+
+    const bindEvents = () => {
         const deleteButtons = document.querySelectorAll(".js-deleteButtons");
 
         deleteButtons.forEach((deleteButton, index) => {
@@ -40,7 +44,7 @@
                 finishTask(index);
             });
         });
-    };
+    }
 
     const deleteTask = (index) => {
         tasks.splice(index, 1);
