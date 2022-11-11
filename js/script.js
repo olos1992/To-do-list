@@ -57,11 +57,9 @@
     }
 
     const addNewTask = (newTaskContent) => {
-
         tasks.push({
             content: newTaskContent,
         });
-
         render();
     }
 
@@ -83,7 +81,6 @@
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit);
-
     };
 
     init();

@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400&display=swap" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
     <script src="js/script.js" defer></script>
@@ -15,17 +19,20 @@
 
 <body class="body">
 
-    <header class="header">
+    <header>
         <h1>Lista zadań</h1>
     </header>
 
+    <div class="form__header" >
+        <h2>Dodaj nowe zadanie<h2>
+    </div>
+
     <div class="container">
-        <form class="js-form">
-            <h2>Dodaj nowe zadanie<h2>
-                    <p>
-                        <input class="js-newTask">
-                        <button class="js-newTaskButton">Dodaj zadanie</button>
-                    </p>
+        <form class="form js-form">
+                    <div class="form__content">
+                        <input class="form__input js-newTask" autofocus placeholder="Co jest do zrobienia?">
+                        <button class="form__button js-newTaskButton">Dodaj zadanie</button>
+                    </div>
         </form>
     </div>
 

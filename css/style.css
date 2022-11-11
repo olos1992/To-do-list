@@ -6,6 +6,83 @@ html {
     box-sizing: inherit;
 }
 
+.body {
+    background-color: #ededed;
+    font-family: 'Lato', sans-serif;
+    max-width: 1200px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.form {
+    padding: 20px;
+}
+
+@media (max-width: 550px) {
+    .form {
+        padding: 10px;
+    }
+}
+
+.form__header {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.form__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form__input {
+    margin: 0 20px;
+    padding: 11px;
+    flex-grow: 10;
+    border-radius: 0;
+    border: 1px solid #e7e7e7;
+    font-size: 18px;
+}
+
+@media (max-width: 550px) {
+    .form__input {
+        margin: 0px;
+        padding: 11px;
+        flex-grow: 1;
+        border-radius: 0;
+        border: 1px solid #e7e7e7;
+        max-width: 100%;
+    }
+}
+
+.form__button {
+    border: none;
+    background-color: #007382;
+    color: #bdf8fa;
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+@media (max-width: 550px) {
+    .form__button {
+        flex-grow: 1;
+        margin-top: 20px;
+        margin-left: 0px;
+        flex-basis: 200px;
+    }
+}
+
 .taskFinished {
     text-decoration: line-through;
 }
