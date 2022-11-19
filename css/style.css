@@ -31,7 +31,7 @@ html {
     height: 55px;
 }
 
-.list__container--text {
+.list__containerHeader {
     margin: 0;
     margin-left: 20px;
     padding: 5px;
@@ -72,7 +72,7 @@ html {
     height: 55px;
 }
 
-.form__header--text {
+.form__headerContent {
     padding: 10px;
     margin-left: 20px;
 }
