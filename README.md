@@ -1,6 +1,6 @@
 # ALEKSANDER SKUŁA - TO DO LIST
 
-![Aleksander Skuła - to DO list preview](images/preview.PNG)
+![Aleksander Skuła - to DO list preview](images/preview.PNG?)
 
 ## Table of contents
 
