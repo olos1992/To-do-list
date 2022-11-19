@@ -9,17 +9,51 @@ html {
 .body {
     background-color: #ededed;
     font-family: 'Lato', sans-serif;
-    max-width: 1200px;
+    max-width: 1000px;
     min-width: 300px;
     margin: 0 auto;
     padding: 20px;
 }
 
-
 .container {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 15px;
+}
+
+.list {
+    background-color: #fff;
+}
+
+.list__container {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+    height: 55px;
+}
+
+.list__container--text {
+    margin: 0;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.list__content {
+    padding-bottom: 10px;
+}
+
+.list__item {
+    display: flex;
+    margin: 10px 0;
+    margin-right: 30px;
+    list-style: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.list__itemText {
+    word-break: break-all;
+    margin-right: 15px;
 }
 
 .form {
@@ -35,8 +69,12 @@ html {
 .form__header {
     border-bottom: 1px solid #ddd;
     background-color: #fff;
-    padding-left: 20px;
-    padding-top: 5px;
+    height: 55px;
+}
+
+.form__header--text {
+    padding: 10px;
+    margin-left: 20px;
 }
 
 .form__content {
@@ -46,12 +84,13 @@ html {
 }
 
 .form__input {
-    margin: 0 20px;
     padding: 11px;
+    margin-right: 20px;
     flex-grow: 10;
     border-radius: 0;
     border: 1px solid #e7e7e7;
     font-size: 18px;
+    aut
 }
 
 @media (max-width: 550px) {
@@ -85,4 +124,24 @@ html {
 
 .taskFinished {
     text-decoration: line-through;
+}
+
+.finishButton {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #1a7b1e;
+    color: white;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.deleteButton {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #ed293a;
+    color: white;
+    margin-left: auto;
+    flex-shrink: 0;
 }
