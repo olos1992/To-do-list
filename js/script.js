@@ -1,25 +1,18 @@
 {
 
-    const tasks = [
-        {
-            content: "zadanie niezrobione",
-            finished: false,
-        },
-        {
-            content: "zadanie zrobione",
-            finished: true,
-        },
-    ];
+    const tasks = [];
 
     const render = () => {
         let listItem = "";
 
         for (const task of tasks) {
             listItem += `<li
-            class=${task.finished === true ? "taskFinished" : ""}>
-            <button class="js-finishButtons">Zrobione</button>
+            class='list__item'>
+            <button class="finishButton js-finishButtons">&#x2714</button>
+            <div class="list__itemText ${task.finished === true ? "taskFinished" : ""}">
             ${task.content}
-            <button class="js-deleteButtons">Usuń zadanie</button>
+            </div>
+            <button class="deleteButton js-deleteButtons">&#x1F5D1</button>
             </li>`;
         };
 
@@ -46,6 +39,14 @@
         });
     }
 
+    const autofocus = () => {
+        const newTaskFocus = document.querySelector(".form__input")
+
+        newTaskFocus.value = "";
+        newTaskFocus.focus();
+    }
+
+
     const deleteTask = (index) => {
         tasks.splice(index, 1);
         render();
@@ -68,11 +69,13 @@
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
+
         if (newTaskContent === "") {
             return;
         }
 
         addNewTask(newTaskContent);
+        autofocus();
     };
 
     const init = () => {
