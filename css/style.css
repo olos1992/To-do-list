@@ -27,6 +27,7 @@ html {
 
 .list__container {
     padding: 5px;
+    padding-bottom: 4px;
     border-bottom: 1px solid #ddd;
     height: 55px;
 }
@@ -38,6 +39,8 @@ html {
 }
 
 .list__content {
+    min-height: 30px;
+    padding-top: 30px;
     padding-bottom: 10px;
 }
 
@@ -84,13 +87,13 @@ html {
 }
 
 .form__input {
-    padding: 11px;
+    padding: 8px;
     margin-right: 20px;
+    margin-left: -10px;
     flex-grow: 10;
     border-radius: 0;
     border: 1px solid #e7e7e7;
     font-size: 18px;
-    aut
 }
 
 @media (max-width: 550px) {
@@ -107,9 +110,9 @@ html {
 .form__button {
     border: none;
     background-color: #007382;
-    color: #bdf8fa;
+    color: white;
     font-size: 18px;
-    padding: 10px;
+    padding: 8px;
     margin-left: 10px;
 }
 
