@@ -6,12 +6,11 @@
         let listItem = "";
 
         for (const task of tasks) {
-            listItem += `<li
-            class='list__item'>
+            listItem += `<li class='list__item'>
             <button class="finishButton js-finishButtons"></button>
-            <div class="list__itemText ${task.finished === true ? "taskFinished" : ""}">
+            <span class="list__itemText ${task.finished === true ? "taskFinished" : ""}">
             ${task.content}
-            </div>
+            </span>
             <button class="deleteButton js-deleteButtons">&#x1F5D1</button>
             </li>`;
         };
