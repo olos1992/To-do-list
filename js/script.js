@@ -8,7 +8,7 @@
         for (const task of tasks) {
             listItem += `<li
             class='list__item'>
-            <button class="finishButton js-finishButtons">&#x2714</button>
+            <button class="finishButton js-finishButtons"></button>
             <div class="list__itemText ${task.finished === true ? "taskFinished" : ""}">
             ${task.content}
             </div>
@@ -36,6 +36,7 @@
             finishButton.addEventListener("click", () => {
                 finishTask(index);
             });
+            tasks[index].finished === true ? finishButton.innerHTML = "&#x2714" : "";
         });
     }
 
@@ -45,7 +46,6 @@
         newTaskFocus.value = "";
         newTaskFocus.focus();
     }
-
 
     const deleteTask = (index) => {
         tasks.splice(index, 1);
