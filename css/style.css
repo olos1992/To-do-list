@@ -9,7 +9,7 @@ html {
 .body {
     background-color: #ededed;
     font-family: 'Lato', sans-serif;
-    max-width: 1000px;
+    max-width: 900px;
     min-width: 300px;
     margin: 0 auto;
     padding: 20px;
@@ -38,3 +38,27 @@ html {
     margin-left: auto;
     flex-shrink: 0;
 }
+
+.doneHideButton {
+    background: none;
+    border: none;
+    margin-left: auto;
+    font-size: 18px;
+    color: #007382;
+}
+
+.doneHideButton:hover {
+    color: #007382b4;
+}
+
+.finishAllButton {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #007382;
+}
+
+.finishAllButton:hover {
+    color: #007382b4;
+}    color: #007382b4;

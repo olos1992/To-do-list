@@ -37,31 +37,44 @@
             });
             tasks[index].finished === true ? finishButton.innerHTML = "&#x2714" : "";
         });
-    }
+
+        toggleNewButtons();
+
+        const doneHideButton = document.querySelector(".doneHideButton");
+
+        const finishAllButton = document.querySelector(".finishAllButton");
+
+    };
+
+    const toggleNewButtons = () => {
+        const sectionHeader = document.querySelector(".list__header")
+
+        document.querySelector(".js-tasksList").innerHTML !== "" ? sectionHeader.innerHTML = `Lista zadań<button class="doneHideButton js-doneHideButton">Ukryj ukończone</button><button class="finishAllButton js-finishAllButton">Ukończ wszystkie</button>` : sectionHeader.innerHTML = "Lista zadań";
+    };
 
     const autofocus = () => {
         const newTaskFocus = document.querySelector(".form__input")
 
         newTaskFocus.value = "";
         newTaskFocus.focus();
-    }
+    };
 
     const deleteTask = (index) => {
         tasks.splice(index, 1);
         render();
-    }
+    };
 
     const finishTask = (index) => {
         tasks[index].finished = !tasks[index].finished;
         render();
-    }
+    };
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
             content: newTaskContent,
         });
         render();
-    }
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();

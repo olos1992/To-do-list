@@ -3,6 +3,7 @@
 }
 
 .list__header {
+    display: flex;
     border-bottom: 2px solid #ddd;
     padding: 15px;
     margin: 0;
