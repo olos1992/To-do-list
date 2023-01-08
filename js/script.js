@@ -1,8 +1,9 @@
 {
 
-    const tasks = [];
+    let tasks = [];
+    let hideDoneTasks = false;
 
-    const render = () => {
+    const renderTasks = () => {
         let listItem = "";
 
         for (const task of tasks) {
@@ -16,11 +17,34 @@
         };
 
         document.querySelector(".js-tasksList").innerHTML = listItem;
-
-        bindEvents();
     };
 
-    const bindEvents = () => {
+    const renderButtons = () => {
+        const buttonsCheck = document.querySelector(".js-tasksList").innerHTML;
+        const sectionHeader = document.querySelector(".list__header")
+
+        buttonsCheck !== "" ? sectionHeader.innerHTML = `Lista zadań<button class="doneHideButton js-doneHideButton">Ukryj ukończone</button><button class="finishAllButton js-finishAllButton">Ukończ wszystkie</button>` : sectionHeader.innerHTML = "Lista zadań";
+    };
+
+    const bindButtonsEvents = () => {
+        const buttonsCheck = document.querySelector(".js-tasksList").innerHTML;
+        if (buttonsCheck !== "") {
+            const finishAllTasks = document.querySelector(".js-finishAllButton");
+            const hideFinishedTasks = document.querySelector(".js-doneHideButton");
+        }
+        return;
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
+
+        bindRemoveEvents();
+        bindToggleEvents();
+        bindButtonsEvents();
+    };
+
+    const bindRemoveEvents = () => {
         const deleteButtons = document.querySelectorAll(".js-deleteButtons");
 
         deleteButtons.forEach((deleteButton, index) => {
@@ -28,7 +52,9 @@
                 deleteTask(index);
             });
         });
+    };
 
+    const bindToggleEvents = () => {
         const finishButtons = document.querySelectorAll(".js-finishButtons");
 
         finishButtons.forEach((finishButton, index) => {
@@ -37,19 +63,6 @@
             });
             tasks[index].finished === true ? finishButton.innerHTML = "&#x2714" : "";
         });
-
-        toggleNewButtons();
-
-        const doneHideButton = document.querySelector(".doneHideButton");
-
-        const finishAllButton = document.querySelector(".finishAllButton");
-
-    };
-
-    const toggleNewButtons = () => {
-        const sectionHeader = document.querySelector(".list__header")
-
-        document.querySelector(".js-tasksList").innerHTML !== "" ? sectionHeader.innerHTML = `Lista zadań<button class="doneHideButton js-doneHideButton">Ukryj ukończone</button><button class="finishAllButton js-finishAllButton">Ukończ wszystkie</button>` : sectionHeader.innerHTML = "Lista zadań";
     };
 
     const autofocus = () => {
