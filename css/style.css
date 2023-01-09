@@ -29,6 +29,15 @@ html {
     flex-shrink: 0;
 }
 
+.finishButton:active {
+    border: 2px solid black;
+}
+
+.finishButton:hover {
+    background-color: #1a7b1dc5;
+    transition: 0.5s;
+}
+
 .deleteButton {
     width: 30px;
     height: 30px;
@@ -37,6 +46,15 @@ html {
     color: white;
     margin-left: auto;
     flex-shrink: 0;
+}
+
+.deleteButton:active {
+    border: 2px solid black;
+}
+
+.deleteButton:hover {
+    background-color: #ed2939c5;
+    transition: 0.5s;
 }
 
 .doneHideButton {
@@ -49,6 +67,7 @@ html {
 
 .doneHideButton:hover {
     color: #007382b4;
+    transition: 0.5s;
 }
 
 .finishAllButton {
@@ -61,4 +80,9 @@ html {
 
 .finishAllButton:hover {
     color: #007382b4;
-}    color: #007382b4;
+    transition: 0.5s;
+}
+
+.finishAllButton.disabled {
+    color: #007382ab;
+}
