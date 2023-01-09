@@ -10,7 +10,7 @@ html {
     background-color: #ededed;
     font-family: 'Lato', sans-serif;
     max-width: 900px;
-    min-width: 300px;
+    min-width: 320px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -27,6 +27,7 @@ html {
     color: white;
     margin-right: 20px;
     flex-shrink: 0;
+    transition: 0.3s;
 }
 
 .finishButton:active {
@@ -35,7 +36,6 @@ html {
 
 .finishButton:hover {
     background-color: #1a7b1dc5;
-    transition: 0.5s;
 }
 
 .deleteButton {
@@ -46,6 +46,7 @@ html {
     color: white;
     margin-left: auto;
     flex-shrink: 0;
+    transition: 0.3s;
 }
 
 .deleteButton:active {
@@ -54,7 +55,6 @@ html {
 
 .deleteButton:hover {
     background-color: #ed2939c5;
-    transition: 0.5s;
 }
 
 .doneHideButton {
@@ -63,11 +63,18 @@ html {
     margin-left: auto;
     font-size: 18px;
     color: #007382;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .doneHideButton {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
 }
 
 .doneHideButton:hover {
     color: #007382b4;
-    transition: 0.5s;
 }
 
 .finishAllButton {
@@ -76,11 +83,19 @@ html {
     margin-left: 10px;
     font-size: 18px;
     color: #007382;
+    transition: 0.3s
+}
+
+@media (max-width: 768px) {
+    .finishAllButton {
+        flex-basis: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
 }
 
 .finishAllButton:hover {
     color: #007382b4;
-    transition: 0.5s;
 }
 
 .finishAllButton.disabled {

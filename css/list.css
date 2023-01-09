@@ -10,6 +10,12 @@
     padding-left: 30px;
 }
 
+@media (max-width: 738px) {
+    .list__header {
+        flex-wrap: wrap;
+    }
+}
+
 .list__content {
     min-height: 30px;
     padding-top: 30px;
