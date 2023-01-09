@@ -42,10 +42,10 @@
             finishAllButton.addEventListener("click", () => {
                 finishAllTasks();
             });
+
             const hideFinishedButton = document.querySelector(".js-doneHideButton");
             hideFinishedButton.addEventListener("click", () => {
-                hideDoneTasks = !hideDoneTasks;
-                hideTasks();
+                hideFinishedTasks();
             });
         };
         return;
@@ -114,12 +114,10 @@
         render();
     };
 
-    const hideTasks = (listItem) => {
-        if (hideDoneTasks === true) {
-                listItem.classList.add("list__item--hidden")
-            render();
-        };
-    }
+    const hideFinishedTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
