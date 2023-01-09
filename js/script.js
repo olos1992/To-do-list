@@ -26,15 +26,6 @@
         buttonsCheck !== "" ? sectionHeader.innerHTML = `Lista zadań<button class="doneHideButton js-doneHideButton">Ukryj ukończone</button><button class="finishAllButton js-finishAllButton">Ukończ wszystkie</button>` : sectionHeader.innerHTML = "Lista zadań";
     };
 
-    const bindButtonsEvents = () => {
-        const buttonsCheck = document.querySelector(".js-tasksList").innerHTML;
-        if (buttonsCheck !== "") {
-            const finishAllTasks = document.querySelector(".js-finishAllButton");
-            const hideFinishedTasks = document.querySelector(".js-doneHideButton");
-        }
-        return;
-    };
-
     const render = () => {
         renderTasks();
         renderButtons();
@@ -42,6 +33,22 @@
         bindRemoveEvents();
         bindToggleEvents();
         bindButtonsEvents();
+    };
+
+    const bindButtonsEvents = () => {
+        const buttonsCheck = document.querySelector(".js-tasksList").innerHTML;
+        if (buttonsCheck !== "") {
+            const finishAllButton = document.querySelector(".js-finishAllButton");
+            finishAllButton.addEventListener("click", () => {
+                finishAllTasks();
+            });
+            const hideFinishedButton = document.querySelector(".js-doneHideButton");
+            hideFinishedButton.addEventListener("click", () => {
+                hideDoneTasks = !hideDoneTasks;
+                hideTasks();
+            });
+        };
+        return;
     };
 
     const bindRemoveEvents = () => {
@@ -81,7 +88,7 @@
     };
 
     const finishTask = (index) => {
-         tasks = [
+        tasks = [
             ...tasks.slice(0, index),
             {
                 ...tasks[index],
@@ -99,6 +106,20 @@
         ];
         render();
     };
+
+    const finishAllTasks = () => {
+        tasks = tasks.map((task) => ({
+            ...task, finished: true
+        }));
+        render();
+    };
+
+    const hideTasks = (listItem) => {
+        if (hideDoneTasks === true) {
+                listItem.classList.add("list__item--hidden")
+            render();
+        };
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();

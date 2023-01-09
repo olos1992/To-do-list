@@ -30,3 +30,7 @@
     word-break: break-all;
     margin-right: 15px;
 }
+
+.list__item--hidden {
+    display: none;
+}
