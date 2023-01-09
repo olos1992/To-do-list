@@ -4,26 +4,30 @@
     let hideDoneTasks = false;
 
     const renderTasks = () => {
-        let listItem = "";
-
-        for (const task of tasks) {
-            listItem += `<li class='list__item'>
+        const listToHTML = task =>
+            `<li class='list__item ${task.finished && hideDoneTasks ? "list__item--hidden" : ""} js-tasksList'>
             <button class="finishButton js-finishButtons"></button>
             <span class="list__itemText ${task.finished === true ? "taskFinished" : ""}">
             ${task.content}
             </span>
             <button class="deleteButton js-deleteButtons">&#x1F5D1</button>
             </li>`;
-        };
 
-        document.querySelector(".js-tasksList").innerHTML = listItem;
+        const listElement = document.querySelector(".js-tasksList");
+        listElement.innerHTML = tasks.map(listToHTML).join("");
     };
 
     const renderButtons = () => {
         const buttonsCheck = document.querySelector(".js-tasksList").innerHTML;
         const sectionHeader = document.querySelector(".list__header")
 
-        buttonsCheck !== "" ? sectionHeader.innerHTML = `Lista zadań<button class="doneHideButton js-doneHideButton">Ukryj ukończone</button><button class="finishAllButton js-finishAllButton">Ukończ wszystkie</button>` : sectionHeader.innerHTML = "Lista zadań";
+        if (buttonsCheck !== "") {
+            sectionHeader.innerHTML = `Lista zadań
+            <button class="doneHideButton js-doneHideButton" ${tasks.every(({ finished }) => !finished) ? "disabled" : ""}> ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
+            <button class="finishAllButton ${tasks.every(({ finished }) => finished) ? "disabled" : ""} js-finishAllButton">Ukończ wszystkie</button>`
+            return;
+        }
+        sectionHeader.innerHTML = "Lista zadań";
     };
 
     const render = () => {
