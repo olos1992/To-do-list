@@ -1,16 +1,15 @@
 {
-
     let tasks = [];
     let hideDoneTasks = false;
 
     const renderTasks = () => {
         const listToHTML = task =>
-            `<li class='list__item ${task.finished && hideDoneTasks ? "list__item--hidden" : ""} js-tasksList'>
-            <button class="finishButton js-finishButtons"></button>
-            <span class="list__itemText ${task.finished === true ? "taskFinished" : ""}">
+            `<li class='list__item ${task.finished && hideDoneTasks ? "list__item--hidden" : ""}'>
+            <button class="list__button list__button--finish js-finishButtons"></button>
+            <span class="list__itemText ${task.finished === true ? "list__item--finished" : ""}">
             ${task.content}
             </span>
-            <button class="deleteButton js-deleteButtons">&#x1F5D1</button>
+            <button class="list__button list__button--delete js-deleteButtons">&#x1F5D1</button>
             </li>`;
 
         const listElement = document.querySelector(".js-tasksList");
@@ -23,8 +22,8 @@
 
         if (buttonsCheck !== "") {
             sectionHeader.innerHTML = `Lista zadań
-            <button class="doneHideButton js-doneHideButton" ${tasks.every(({ finished }) => !finished) ? "disabled" : ""}> ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
-            <button class="finishAllButton ${tasks.every(({ finished }) => finished) ? "disabled" : ""} js-finishAllButton">Ukończ wszystkie</button>`
+            <button class="header__button--hideDone js-hideFinishedButton" ${tasks.every(({ finished }) => !finished) ? "disabled" : ""}> ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
+            <button class="header__button--finishAll ${tasks.every(({ finished }) => finished) ? "disabled" : ""} js-finishAllButton">Ukończ wszystkie</button>`
             return;
         }
         sectionHeader.innerHTML = "Lista zadań";
@@ -41,13 +40,14 @@
 
     const bindButtonsEvents = () => {
         const buttonsCheck = document.querySelector(".js-tasksList").innerHTML;
+
         if (buttonsCheck !== "") {
             const finishAllButton = document.querySelector(".js-finishAllButton");
             finishAllButton.addEventListener("click", () => {
                 finishAllTasks();
             });
 
-            const hideFinishedButton = document.querySelector(".js-doneHideButton");
+            const hideFinishedButton = document.querySelector(".js-hideFinishedButton");
             hideFinishedButton.addEventListener("click", () => {
                 hideFinishedTasks();
             });
@@ -129,6 +129,7 @@
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
         if (newTaskContent === "") {
+            autofocus();
             return;
         }
 
@@ -145,5 +146,4 @@
     };
 
     init();
-
 }

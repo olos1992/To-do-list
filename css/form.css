@@ -1,8 +1,8 @@
-.section {
+.input__section {
     background-color: #fff;
 }
 
-.section__header {
+.input__sectionHeader {
     border-bottom: 2px solid #ddd;
     padding: 15px;
     margin: 0;
@@ -64,6 +64,5 @@
         margin-top: 20px;
         margin-left: 0px;
         flex-basis: 100%;
-
     }
 }
