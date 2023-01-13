@@ -21,11 +21,17 @@
         const sectionHeader = document.querySelector(".list__header")
 
         if (buttonsCheck !== "") {
-            sectionHeader.innerHTML = `Lista zadań
-            <button class="header__button--hideDone js-hideFinishedButton" ${tasks.every(({ finished }) => !finished) ? "disabled" : ""}> ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
-            <button class="header__button--finishAll ${tasks.every(({ finished }) => finished) ? "disabled" : ""} js-finishAllButton">Ukończ wszystkie</button>`
+            sectionHeader.innerHTML =
+                `Lista zadań
+            <button class="header__button--hideDone js-hideFinishedButton" ${tasks.every(({ finished }) => !finished) ? "disabled" : ""}>
+            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+            </button>
+            <button class="header__button--finishAll ${tasks.every(({ finished }) => finished) ? "disabled" : ""} js-finishAllButton">
+            Ukończ wszystkie
+            </button>`
             return;
-        }
+        };
+
         sectionHeader.innerHTML = "Lista zadań";
     };
 
@@ -46,7 +52,6 @@
             finishAllButton.addEventListener("click", () => {
                 finishAllTasks();
             });
-
             const hideFinishedButton = document.querySelector(".js-hideFinishedButton");
             hideFinishedButton.addEventListener("click", () => {
                 hideFinishedTasks();
@@ -87,7 +92,7 @@
         tasks = [
             ...tasks.slice(0, index),
             ...tasks.slice(index + 1),
-        ]
+        ];
         render();
     };
 
@@ -131,7 +136,7 @@
         if (newTaskContent === "") {
             autofocus();
             return;
-        }
+        };
 
         addNewTask(newTaskContent);
         autofocus();

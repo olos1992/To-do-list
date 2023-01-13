@@ -51,11 +51,11 @@
     font-size: 18px;
     padding: 8px;
     margin-left: 10px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .form__button:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     background-color: #007382c5;
 }
 
