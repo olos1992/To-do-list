@@ -1,35 +1,3 @@
-.list__button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    color: white;
-    flex-shrink: 0;
-}
-
-.list__button:active {
-    border: 2px solid black;
-}
-
-.list__button--finish {
-    background-color: #1a7b1e;
-    margin-right: 20px;
-    transition: 0.3s;
-}
-
-.list__button--finish:hover {
-    background-color: #1a7b1dc5;
-}
-
-.list__button--delete {
-    background-color: #ed293a;
-    margin-left: auto;
-    transition: 0.3s;
-}
-
-.list__button--delete:hover {
-    background-color: #ed2939c5;
-}
-
 .header__button--hideDone {
     background: none;
     border: none;
