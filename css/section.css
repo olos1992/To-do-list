@@ -1,0 +1,10 @@
+.input__section {
+    background-color: #fff;
+}
+
+.input__sectionHeader {
+    border-bottom: 2px solid #ddd;
+    padding: 15px;
+    margin: 0;
+    padding-left: 30px;
+}
