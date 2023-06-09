@@ -5,7 +5,6 @@
 .list__header {
     display: flex;
     border-bottom: 2px solid #ddd;
-    padding: 15px;
     margin: 0;
     padding-left: 30px;
 }
@@ -13,6 +12,37 @@
 @media (max-width: 768px) {
     .list__header {
         flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0px;
+    }
+}
+
+.list__subheader {
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+@media (max-width: 768px) {
+    .list__subheader {
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.list__buttons {
+    display: flex;
+    flex-basis: 100%;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .list__buttons {
+        justify-content: center;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-right: 0px;
     }
 }
 
@@ -45,7 +75,7 @@
     text-decoration: line-through;
 }
 
-.list__button {
+.list__itemButton {
     width: 30px;
     height: 30px;
     border: none;
@@ -53,26 +83,26 @@
     flex-shrink: 0;
 }
 
-.list__button:active {
+.list__itemButton:active {
     border: 2px solid black;
 }
 
-.list__button--finish {
+.list__itemButton--finish {
     background-color: #1a7b1e;
     margin-right: 20px;
     transition: 0.3s;
 }
 
-.list__button--finish:hover {
+.list__itemButton--finish:hover {
     background-color: #1a7b1dc5;
 }
 
-.list__button--delete {
+.list__itemButton--delete {
     background-color: #ed293a;
     margin-left: auto;
     transition: 0.3s;
 }
 
-.list__button--delete:hover {
+.list__itemButton--delete:hover {
     background-color: #ed2939c5;
 }
