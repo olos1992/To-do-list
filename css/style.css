@@ -6,11 +6,6 @@ html {
     box-sizing: inherit;
 }
 
-.body {
+body {
     background-color: #ededed;
-    font-family: 'Lato', sans-serif;
-    max-width: 900px;
-    min-width: 320px;
-    margin: 0 auto;
-    padding: 20px;
 }

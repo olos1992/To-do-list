@@ -1,10 +1,35 @@
-.input__section {
+.section {
     background-color: #fff;
 }
 
-.input__sectionHeader {
+.section__header {
     border-bottom: 2px solid #ddd;
     padding: 15px;
     margin: 0;
     padding-left: 30px;
+}
+
+.section__header--list {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    padding-left: 30px;
+}
+
+@media (max-width: 768px) {
+    .section__header--list {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0px;
+    }
+}
+
+.section__title {
+    flex-basis: 100%;
+}
+
+@media (max-width: 768px) {
+    .section__title {
+        text-align: center;
+        margin-bottom: 0;
+    }
 }

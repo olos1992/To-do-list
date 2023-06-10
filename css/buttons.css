@@ -1,4 +1,21 @@
-.header__button--hideDone {
+.buttons {
+    display: flex;
+    flex-basis: 100%;
+    margin-right: 20px;
+
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-right: 0px;
+        flex-wrap: wrap;
+    }
+}
+
+.button--hideDone {
     background: none;
     border: none;
     margin-left: auto;
@@ -8,18 +25,18 @@
 }
 
 @media (max-width: 768px) {
-    .header__button--hideDone {
+    .button--hideDone {
         margin-top: 20px;
         flex-grow: 1;
         text-align: center;
     }
 }
 
-.header__button--hideDone:hover {
+.button--hideDone:hover {
     color: #007382b4;
 }
 
-.header__button--finishAll {
+.button--finishAll {
     background: none;
     border: none;
     margin-left: 10px;
@@ -29,18 +46,17 @@
 }
 
 @media (max-width: 768px) {
-    .header__button--finishAll {
+    .button--finishAll {
         flex-basis: 100%;
         margin-top: 10px;
-        text-align: center;
         margin-left: 0px;
     }
 }
 
-.header__button--finishAll:hover {
+.button--finishAll:hover {
     color: #007382b4;
 }
 
-.header__button--finishAll.disabled {
+.button--finishAll.disabled {
     color: #007382ab;
 }
