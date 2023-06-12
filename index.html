@@ -18,7 +18,7 @@
 
     <link href="css/style.css" rel="stylesheet">
     <link href="css/container.css" rel="stylesheet">
-     <link href="css/form.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
     <link href="css/list.css" rel="stylesheet">
     <link href="css/buttons.css" rel="stylesheet">
     <link href="css/section.css" rel="stylesheet">
@@ -30,30 +30,31 @@
 
 <body>
     <main class="container">
-    <header>
-        <h1>Lista zadań</h1>
-    </header>
+        <header>
+            <h1>Lista zadań</h1>
+        </header>
 
-    <section class="section">
-        <div class="section__header">
-            <h2 class="section__title">Dodaj nowe zadanie</h2>
-        </div>
-        <form class="form js-form">
-            <input class="form__input js-newTask" placeholder="Co jest do zrobienia?" autofocus>
-            <button class="form__button js-newTaskButton">Dodaj zadanie</button>
-        </form>
-    </section>
+        <section class="section">
+            <div class="section__header">
+                <h2 class="section__title">Dodaj nowe zadanie</h2>
+            </div>
+            <div>
+                <form class="form js-form">
+                    <input class="form__input js-newTask" placeholder="Co jest do zrobienia?" autofocus>
+                    <button class="form__button js-newTaskButton">Dodaj zadanie</button>
+                </form>
+            </div>
+        </section>
 
-    <section class="section">
-        <div class="section__header">
-            <h2 class="section__title">Lista zadań</h2>
-            <div class="buttons"></div>
-        </div>
-
-        <div class="section__list">
-            <ul class="list js-tasksList"></ul>
-        </div>
-    </section>
+        <section class="section">
+            <div class="section__header">
+                <h2 class="section__title">Lista zadań</h2>
+                <div class="buttons"></div>
+            </div>
+            <div>
+                <ul class="list js-tasksList"></ul>
+            </div>
+        </section>
     </main>
 </body>
 
