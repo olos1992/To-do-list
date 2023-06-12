@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 768px) {
-    .section__header--list {
+    .section__header{
         flex-wrap: wrap;
         justify-content: center;
         padding-left: 0px;
@@ -23,8 +23,7 @@
 
 @media (max-width: 768px) {
     .section__title {
-        text-align: center;
-        margin-bottom: 0;
+        margin-left: 30px;
     }
 }
 
