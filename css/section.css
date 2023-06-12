@@ -3,15 +3,9 @@
 }
 
 .section__header {
-    border-bottom: 2px solid #ddd;
-    padding: 15px;
-    margin: 0;
-    padding-left: 30px;
-}
-
-.section__header--list {
     display: flex;
     border-bottom: 2px solid #ddd;
+    margin: 0;
     padding-left: 30px;
 }
 
